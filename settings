@@ -1,1 +1,64 @@
 
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>exchange-server</id>
+            <username>Umeshreddy</username>
+            <password>Umesh@79977</password>
+        </server>
+    </servers>
+
+    <profiles>
+
+        <!-- Required for Custom Policy Archetype -->
+        <profile>
+            <id>archetype-repository</id>
+            <repositories>
+                <repository>
+                    <id>archetype</id>
+                    <name>Mule Repository</name>
+                    <url>https://repository-master.mulesoft.org/nexus/content/repositories/public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+
+        <!-- General MuleSoft Dependencies -->
+        <profile>
+            <id>mule</id>
+
+            <repositories>
+                <repository>
+                    <id>mulesoft-releases</id>
+                    <url>https://repository.mulesoft.org/releases/</url>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>mulesoft-releases</id>
+                    <url>https://repository.mulesoft.org/releases/</url>
+                </pluginRepository>
+            </pluginRepositories>
+
+        </profile>
+
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>archetype-repository</activeProfile>
+        <activeProfile>mule</activeProfile>
+    </activeProfiles>
+
+</settings>
