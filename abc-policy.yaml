@@ -1,0 +1,39 @@
+id: abc-policy
+name: abc-policy
+description: abc policy
+category: Custom
+type: custom
+resourceLevelSupported: true
+encryptionSupported: false
+standalone: true
+
+requiredCharacteristics: []
+providedCharacteristics: []
+
+configuration:
+  - propertyName: clientId
+    name: Client ID
+    description: Enter client id
+    type: string
+    optional: false
+
+  - propertyName: clientSecret
+    name: Client Secret
+    description: Enter client secret
+    type: string
+    optional: false
+    sensitive: true
+
+  - propertyName: environment
+    name: Environment
+    description: Select environment
+    type: string
+    optional: true
+    defaultValue: DEV
+
+  - propertyName: enableLogging
+    name: Enable Logging
+    description: Enable or disable logging
+    type: boolean
+    optional: true
+    defaultValue: true
